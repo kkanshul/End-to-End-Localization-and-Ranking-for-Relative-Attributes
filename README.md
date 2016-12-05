@@ -16,7 +16,7 @@ Krishna Kumar Singh, Yong Jae Lee
 2. Torch Libraries 'loadcaffe', 'hdf5', 'gnuplot'
 3. Download the 'stnbhwd-master' from above and install it using 'luarocks make' inside the folder. This is modified version of orginal Spatial Transformer Netork(STN) code (https://github.com/qassemoquab/stnbhwd). In this version an extra loss is added in 'AffineTransformMatrixGenerator.lua' to keep STN within the image boundary.
 4. Download 'weight-init.lua' (obtained from torch toolkit at https://github.com/e-lab/torch-toolbox/tree/master/Weight-init).
-5. 
+5. Download BVLC reference caffenet (https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) 
 
 ## Dataset and Pre-Trained Models
 1. Download ECCV_2016 folder from https://drive.google.com/open?id=0B9fXH9R3A3pYSUFpbllLZkZZd0E . It contains training and test data for LFW-10 dataset as well as pre-trained models.
@@ -50,9 +50,10 @@ For more information use command
 ```
 th attribute_localization_ranking_training.lua --help
 ```
-NOTE: 1) For training combine model, STN only model has to be trained first.
-      2) Scaling is more sensitive than translation. So, if you have issue of convergence during training try to decrease value 'scale_ratio' argument.
-      3) Learned modle will be stored in 'output_dir_path'. Code also genrates visualization webpage which shows where STN is localizing over different epochs of the training. 	
+NOTE: 
+1. For training combine model, STN only model has to be trained first.
+2. Scaling is more sensitive than translation. So, if you have issue of convergence during training try to decrease value 'scale_ratio' argument.
+3. Learned modle will be stored in 'output_dir_path'. Code also genrates visualization webpage which shows where STN is localizing over different epochs of the training. 	
 
 ## Demo Code
 'attribute_demo.lua' shows the localization and ranking results on pair of images stored at 'demo_data/input_images/'. Localization results are stored at 'demo_data/output_images' and ranking score is printed. 'attribute_num' can be used to specify attribute for which demo code will be run.
