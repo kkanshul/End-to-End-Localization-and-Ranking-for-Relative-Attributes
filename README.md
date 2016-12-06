@@ -61,7 +61,7 @@ NOTE:
 3. Learned modle will be stored in `output_dir_path`. Code also genrates visualization webpage which shows where STN is localizing over different epochs of the training. 	
 
 ## Demo Code
-`attribute_demo.lua` shows the localization and ranking results on pair of images stored at `demo_data/input_images/`. Localization results are stored at `demo_data/output_images` and ranking score is printed. `attribute_num` can be used to specify attribute for which demo code will be run.
+`attribute_demo.lua` shows the localization and ranking results on pair of images stored at `demo_data/input_images/`. Localization results are stored at `demo_data/output_images` and ranking scores are printed. `attribute_num` can be used to specify attribute for the demo code.
 
 For example if you want demo for attribute mouth open then run
 ```
