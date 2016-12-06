@@ -1,7 +1,9 @@
-# RelativeAttributes
+# End-to-End Localization and Ranking for Relative Attributes
 Code for the [End-to-End Localization and Ranking for Relative Attributes, ECCV 2016]
 Krishna Kumar Singh, Yong Jae Lee
 (http://krsingh.cs.ucdavis.edu/krishna_files/papers/relative_attributes/relative_attributes.html)
+
+If you use our work, please cite it:
 ```bibtex
 @inproceedings{krishna-eccv2016,
   title = {End-to-End Localization and Ranking for Relative Attributes},
@@ -21,7 +23,7 @@ Krishna Kumar Singh, Yong Jae Lee
 ## Dataset and Pre-Trained Models
 1. Download ECCV_2016 folder from https://drive.google.com/open?id=0B9fXH9R3A3pYSUFpbllLZkZZd0E . It contains training and test data for LFW-10 dataset as well as pre-trained models.
 2. Copy the `faces_train` and `faces_test` inside `train_test_data` folder. Training and test data are in `hdf5` format. It contains image pairs (`data` and `datap`) and label indicating whether they have equal attribute strength or `data` has higher strength. The images are mean subtracted and in BGR format.
-3. Copy the 'models_localization' and `models_combined` in the `learned_model` folder. `models_localization` contains the version of network with just STN with no global image. This model is better for localizing attributes. 'models_combined' contained the version of network with both STN and global image. This version is better for ranking. 
+3. Copy the `models_localization` and `models_combined` in the `learned_model` folder. `models_localization` contains the version of network with just STN with no global image. This model is better for localizing attributes. `models_combined` contained the version of network with both STN and global image. This version is better for ranking. 
 
 ## Testing Pre-Trained Models
 Models can be tested using `attribute_localization_ranking_testing.lua` code. You can specify only STN (1) and combined model (2) with `modeltype` argument.
