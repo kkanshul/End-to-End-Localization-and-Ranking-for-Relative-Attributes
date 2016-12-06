@@ -21,14 +21,14 @@ If you use our work, please cite it:
 5. Download BVLC reference caffenet (https://github.com/BVLC/caffe/tree/master/models/bvlc_reference_caffenet) 
 
 ## Dataset and Pre-Trained Models
-1. Download ECCV_2016 folder from https://drive.google.com/open?id=0B9fXH9R3A3pYSUFpbllLZkZZd0E . It contains training and test data for LFW-10 dataset as well as pre-trained models.
+1. Download ECCV_2016 folder from https://drive.google.com/open?id=0B9fXH9R3A3pYSUFpbllLZkZZd0E . It contains training and test data for LFW-10 dataset (http://cvit.iiit.ac.in/projects/relativeParts/) as well as pre-trained models.
 2. Copy the `faces_train` and `faces_test` inside `train_test_data` folder. Training and test data are in `hdf5` format. It contains image pairs (`data` and `datap`) and label indicating whether they have equal attribute strength or `data` has higher strength. The images are mean subtracted and in BGR format.
-3. Copy the `models_localization` and `models_combined` in the `learned_model` folder. `models_localization` contains the version of network with just STN with no global image. This model is better for localizing attributes. `models_combined` contained the version of network with both STN and global image. This version is better for ranking. 
+3. Copy the `models_localization` and `models_combined` in the `learned_model` folder. `models_localization` contains the version of network in which ranker network just takes STN (no global image). This model is better for localizing attributes. `models_combined` contained the version of network in which ranker network takes both STN and global image. This version is better for ranking. 
 
 ## Testing Pre-Trained Models
 Models can be tested using `attribute_localization_ranking_testing.lua` code. You can specify only STN (1) and combined model (2) with `modeltype` argument.
 Attribute can be specified by `attribute_num` argument. Give value 1  to 10 corresponding to 10 attributes.
-1:baldhead, 2:darkhair, 3:eyesopen, 4:goodlooking, 5:masculinelooking, 6:mouthopen, 7:smile, 8:vforehead, 9:v_teeth, 10:young
+`1:baldhead, 2:darkhair, 3:eyesopen, 4:goodlooking, 5:masculinelooking, 6:mouthopen, 7:smile, 8:vforehead, 9:v_teeth, 10:young`
 
 For example if you want to test combine model (containing both STN and global image) for attribute darkhair
 ```
