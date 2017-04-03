@@ -99,9 +99,9 @@ function create_batch(mydata,mydatap,mylabel,rnd_order,mini_batchsize,t)
                         inputs[i-t+1] = image.hflip(image.scale(image.crop(mydata[rnd_order[i]],x_tran,y_tran,x_tran+226,y_tran+226),227,227))
                 end
                 if(flip_2%2==0) then
-                        inputsp[i-t+1] = image.scale(image.crop(mydatap[rnd_order[i]],x_tran,y_tran,x_tran+226,y_tran+226),227,227)
+                        inputsp[i-t+1] = image.scale(image.crop(mydatap[rnd_order[i]],x_tranp,y_tranp,x_tranp+226,y_tranp+226),227,227)
                 else
-                        inputsp[i-t+1] = image.hflip(image.scale(image.crop(mydatap[rnd_order[i]],x_tran,y_tran,x_tran+226,y_tran+226),227,227))
+                        inputsp[i-t+1] = image.hflip(image.scale(image.crop(mydatap[rnd_order[i]],x_tranp,y_tranp,x_tranp+226,y_tranp+226),227,227))
                 end
                 targets[i-t+1] = (mylabel[rnd_order[i]])
        end
